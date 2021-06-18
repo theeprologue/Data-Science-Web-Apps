@@ -1,14 +1,12 @@
-!pip install yfinance
-import yfinance as yf
 import pandas as pd
 import streamlit as sl
+import pandas_datareader .data as web
 
 sl.write("A simple stock price app")
 
-tickerSymbol = 'GOOG'
+sdate = dt.datetime(2020,1,1)
+edate = dt.datetime.now()
+absa = web.DataReader('ABG.JO', data_source='yahoo', start=sdate, end=edate)
 
-tickerData = yf.Ticker(tickerSymbol)
-tickerdf = tickerData.history(period='', start='2020-05-27', end='2020-12-31')
-
-sl.line_chart(tickerdf.Close)
-sl.line_chart(tickerdf.Volume)
+sl.line_chart(absa.Close)
+sl.line_chart(absa.Volume)
