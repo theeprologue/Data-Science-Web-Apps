@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as sl
-import pandas_datareader .data as web
+import pandas_datareader as web
 
 sl.write("A simple stock price app")
 
